@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Недвижимость в Малайзии</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Подключение иконок FontAwesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     body {
       margin: 0;
@@ -18,10 +20,9 @@
       height: 100vh;
       overflow: hidden;
       color: white;
-      background-color: #000; /* На случай если видео не загрузится */
+      background-color: #000;
     }
 
-    /* Само видео */
     #bg-video {
       position: absolute;
       top: 0;
@@ -32,14 +33,13 @@
       z-index: 0;
     }
 
-    /* Тёмная прозрачная подложка поверх видео */
     .overlay {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0); /* Чёрный цвет с 50% прозрачностью */
+      background: rgba(0, 0, 0, 0);
       z-index: 0;
     }
 
@@ -61,7 +61,7 @@
       font-weight: 700;
       max-width: 800px;
       margin: 0 auto;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Лёгкая тень для читаемости */
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     }
 
     .header-content p {
@@ -73,7 +73,7 @@
       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
     }
 
-    .header-content a {
+    .header-content a.main-button {
       background-color: #22C55E;
       color: white;
       padding: 14px 28px;
@@ -86,9 +86,29 @@
       margin-top: 25px;
     }
 
-    .header-content a:hover {
+    .header-content a.main-button:hover {
       background-color: #16A34A;
       transform: scale(1.05);
+    }
+
+    /* Секция с иконками */
+    .social-icons {
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .social-icons a {
+      color: white;
+      font-size: 2rem;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #22C55E;
+      transform: scale(1.2);
     }
 
     section {
@@ -119,7 +139,6 @@
       color: #94A3B8;
     }
 
-    /* Мобильная адаптация */
     @media (max-width: 768px) {
       .header-content h1 {
         font-size: 2rem;
@@ -127,7 +146,7 @@
       .header-content p {
         font-size: 1rem;
       }
-      .header-content a {
+      .header-content a.main-button {
         padding: 10px 20px;
         font-size: 1rem;
       }
@@ -154,37 +173,43 @@
 </head>
 <body>
 
-  <header>
-    <video autoplay muted loop playsinline id="bg-video">
-      <source src="video_2025-04-26_14-33-02.mp4" type="video/mp4" />
-      Ваш браузер не поддерживает видео-фон.
-    </video>
-    <div class="overlay"></div>
-    <div class="header-content">
-      <h1>Инвестируйте в недвижимость в сердце Азии — Куала-Лумпур, Малайзия</h1>
-      <p>Апартаменты, участки с бунгало, квартиры с высоким потенциалом доходности</p>
-      <a href="https://t.me/bestpropertyinmalaysia" target="_blank">Связаться</a>
+<header>
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="video_2025-04-26_14-33-02.mp4" type="video/mp4" />
+    Ваш браузер не поддерживает видео-фон.
+  </video>
+  <div class="overlay"></div>
+  <div class="header-content">
+    <h1>Инвестируйте в недвижимость в сердце Азии — Куала-Лумпур, Малайзия</h1>
+    <p>Апартаменты, участки с бунгало, квартиры с высоким потенциалом доходности</p>
+    <a href="https://t.me/bestpropertyinmalaysia" target="_blank" class="main-button">Связаться</a>
+
+    <div class="social-icons">
+      <a href="https://wa.me/1234567890" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://instagram.com/yourpage" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
     </div>
-  </header>
 
-  <section>
-    <h2>Почему именно Малайзия?</h2>
-    <p>Стабильная экономика, высокий уровень жизни, перспективное образование для детей. Все плюсы под кнопкой "СВЯЗАТЬСЯ"</p>
-  </section>
+  </div>
+</header>
 
-  <section>
-    <h2>Объекты на любой вкус</h2>
-    <p>Мы предлагаем тщательно отобранные объекты: от городских апартаментов до эксклюзивных вилл на зелёных холмах.</p>
-  </section>
+<section>
+  <h2>Почему именно Малайзия?</h2>
+  <p>Стабильная экономика, высокий уровень жизни, перспективное образование для детей. Все плюсы под кнопкой <a href="https://t.me/bestpropertyinmalaysia" target="_blank" style="color: #22C55E; text-decoration: underline;">"СВЯЗАТЬСЯ"</a>.</p>
+</section>
 
-  <section>
-    <h2>Гарантированное сопровождение</h2>
-    <p>Мы помогаем на всех этапах: подбор с полным обзором, проверка документов, сделка.</p>
-  </section>
+<section>
+  <h2>Объекты на любой вкус</h2>
+  <p>Мы предлагаем тщательно отобранные объекты: от городских апартаментов до эксклюзивных вилл на зелёных холмах.</p>
+</section>
 
-  <footer>
-    © 2025 Недвижимость в Куала-Лумпуре. Все права защищены.
-  </footer>
+<section>
+  <h2>Гарантированное сопровождение</h2>
+  <p>Мы помогаем на всех этапах: подбор с полным обзором, проверка документов, сделка.</p>
+</section>
+
+<footer>
+  © 2025 Недвижимость в Куала-Лумпуре. Все права защищены.
+</footer>
 
 </body>
 </html>
