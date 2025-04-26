@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Недвижимость в Малайзии</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -12,55 +12,105 @@
       background-color: #F8FAF5;
       color: #1E293B;
     }
+
     header {
-      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      position: relative;
       height: 100vh;
+      overflow: hidden;
+      color: white;
+      background-color: #000; /* На случай если видео не загрузится */
+    }
+
+    /* Само видео */
+    #bg-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    /* Тёмная прозрачная подложка поверх видео */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Чёрный цвет с 50% прозрачностью */
+      z-index: -1;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 0 20px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      padding: 0 20px;
+      height: 100%;
+      color: #ffffff;
     }
-    header h1 {
-      font-size: 2.5rem;
-      color: #166534;
+
+    .header-content h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
       max-width: 800px;
+      margin: 0 auto;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Лёгкая тень для читаемости */
     }
-    header p {
-      font-size: 1.2rem;
+
+    .header-content p {
+      font-size: 1.3rem;
       margin: 20px 0;
       max-width: 600px;
-      color: #1E293B;
+      margin-left: auto;
+      margin-right: auto;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
     }
-    header a {
+
+    .header-content a {
       background-color: #22C55E;
       color: white;
-      padding: 12px 24px;
+      padding: 14px 28px;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 10px;
       font-weight: 600;
-      transition: background 0.3s ease;
+      font-size: 1.1rem;
+      transition: background 0.3s ease, transform 0.3s ease;
+      display: inline-block;
+      margin-top: 25px;
     }
-    header a:hover {
+
+    .header-content a:hover {
       background-color: #16A34A;
+      transform: scale(1.05);
     }
+
     section {
       padding: 60px 20px;
       text-align: center;
     }
+
     section:nth-child(even) {
       background-color: #D1FAE5;
     }
+
     section h2 {
       font-size: 2rem;
       margin-bottom: 20px;
       color: #166534;
     }
+
     section p {
       max-width: 700px;
       margin: 0 auto;
     }
+
     footer {
       background-color: #F8FAF5;
       text-align: center;
@@ -71,18 +121,18 @@
 
     /* Мобильная адаптация */
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 1.8rem;
+      .header-content h1 {
+        font-size: 2rem;
       }
-      header p {
+      .header-content p {
+        font-size: 1rem;
+      }
+      .header-content a {
+        padding: 10px 20px;
         font-size: 1rem;
       }
       section h2 {
         font-size: 1.5rem;
-      }
-      header a {
-        padding: 10px 20px;
-        font-size: 1rem;
       }
     }
 
@@ -90,10 +140,10 @@
       header {
         padding: 0 10px;
       }
-      header h1 {
-        font-size: 1.5rem;
+      .header-content h1 {
+        font-size: 1.6rem;
       }
-      header p {
+      .header-content p {
         font-size: 0.95rem;
       }
       section {
@@ -103,25 +153,38 @@
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Инвестируйте в недвижимость в сердце Азии — Куала-Лумпур, Малайзия</h1>
-    <p>Апартаменты, участки с бунгало, квартиры с высоким потенциалом доходности</p>
-    <a href="https://t.me/bestpropertyinmalaysia" target="_blank">Связаться</a>
+    <video autoplay muted loop playsinline id="bg-video">
+      <source src="your-video.mp4" type="video/mp4" />
+      Ваш браузер не поддерживает видео-фон.
+    </video>
+    <div class="overlay"></div>
+    <div class="header-content">
+      <h1>Инвестируйте в недвижимость в сердце Азии — Куала-Лумпур, Малайзия</h1>
+      <p>Апартаменты, участки с бунгало, квартиры с высоким потенциалом доходности</p>
+      <a href="https://t.me/bestpropertyinmalaysia" target="_blank">Связаться</a>
+    </div>
   </header>
+
   <section>
     <h2>Почему именно Малайзия?</h2>
     <p>Стабильная экономика, низкий порог входа, быстрое оформление собственности иностранцами и высокий уровень жизни.</p>
   </section>
+
   <section>
     <h2>Объекты под инвестиции</h2>
     <p>Мы предлагаем тщательно отобранные объекты: от городских апартаментов до эксклюзивных вилл на зелёных холмах.</p>
   </section>
+
   <section>
     <h2>Гарантированное сопровождение</h2>
     <p>Мы помогаем на всех этапах: подбор, проверка документов, сделки, оформление и пост-продажный сервис.</p>
   </section>
+
   <footer>
     © 2025 Недвижимость в Куала-Лумпуре. Все права защищены.
   </footer>
+
 </body>
 </html>
