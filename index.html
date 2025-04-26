@@ -95,20 +95,28 @@
     .social-icons {
       margin-top: 20px;
       display: flex;
-      gap: 20px;
+      gap: 15px;
       justify-content: center;
       align-items: center;
     }
 
-    .social-icons a {
-      color: white;
-      font-size: 2rem;
-      transition: color 0.3s ease, transform 0.3s ease;
+    .icon-button {
+      background-color: white;
+      color: #1E293B;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
     }
 
-    .social-icons a:hover {
-      color: #22C55E;
-      transform: scale(1.2);
+    .icon-button:hover {
+      background-color: #22C55E;
+      color: white;
+      transform: scale(1.15);
     }
 
     section {
@@ -139,6 +147,7 @@
       color: #94A3B8;
     }
 
+    /* Мобильная адаптация */
     @media (max-width: 768px) {
       .header-content h1 {
         font-size: 2rem;
@@ -185,8 +194,15 @@
     <a href="https://t.me/bestpropertyinmalaysia" target="_blank" class="main-button">Связаться</a>
 
     <div class="social-icons">
-      <a href="https://wa.me/1234567890" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://instagram.com/yourpage" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/1234567890" target="_blank" aria-label="WhatsApp" class="icon-button">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="https://instagram.com/yourpage" target="_blank" aria-label="Instagram" class="icon-button">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://avito.ru/yourpage" target="_blank" aria-label="Avito" class="icon-button">
+        <i class="fas fa-store"></i>
+      </a>
     </div>
 
   </div>
@@ -194,7 +210,9 @@
 
 <section>
   <h2>Почему именно Малайзия?</h2>
-  <p>Стабильная экономика, высокий уровень жизни, перспективное образование для детей. Все плюсы под кнопкой <a href="https://t.me/bestpropertyinmalaysia" target="_blank" style="color: #22C55E; text-decoration: underline;">"СВЯЗАТЬСЯ"</a>.</p>
+  <p>Стабильная экономика, высокий уровень жизни, перспективное образование для детей. Все плюсы под кнопкой 
+    <a href="https://t.me/bestpropertyinmalaysia" target="_blank" style="color: #22C55E; text-decoration: underline;">"СВЯЗАТЬСЯ"</a>.
+  </p>
 </section>
 
 <section>
